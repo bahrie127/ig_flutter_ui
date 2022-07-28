@@ -6,7 +6,7 @@ class HomePage extends StatelessWidget {
   HomePage({super.key});
 
   final List users = [
-    'Anisa',
+    'Erika',
     'Hasan',
     'Suryono',
     'Ngatman',
@@ -60,6 +60,8 @@ class HomePage extends StatelessWidget {
               itemBuilder: (context, index) {
                 return BubbleStory(
                   name: users[index],
+                  isMe: index == 0 ? true : false,
+                  isLive: index == 1 ? true : false,
                 );
               },
               itemCount: users.length,
