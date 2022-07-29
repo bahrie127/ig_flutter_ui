@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 
+import 'package:ig_flutter_ui/models/post_model.dart';
+
 class BubbleStory extends StatelessWidget {
   const BubbleStory({
     Key? key,
-    required this.name,
     required this.isMe,
     required this.isLive,
+    required this.person,
   }) : super(key: key);
 
-  final String name;
+  // final String name;
   final bool isMe;
   final bool isLive;
+  final Hit person;
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +32,7 @@ class BubbleStory extends StatelessWidget {
                   backgroundColor: isMe ? Colors.white : Colors.pink,
                   child: CircleAvatar(
                     radius: 37,
-                    backgroundImage:
-                        NetworkImage('https://i.pravatar.cc/100?u=$name'),
+                    backgroundImage: NetworkImage(person.userImageUrl),
                   ),
                 ),
               ),
@@ -72,7 +74,7 @@ class BubbleStory extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(top: 5),
-            child: Text(name),
+            child: Text(person.user),
           ),
         ],
       ),

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
+import 'package:ig_flutter_ui/models/post_model.dart';
+
 class UserPost extends StatelessWidget {
   const UserPost({
     Key? key,
-    required this.name,
+    required this.content,
   }) : super(key: key);
-  final String name;
+  final Hit content;
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +23,12 @@ class UserPost extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     radius: 20,
-                    backgroundImage:
-                        NetworkImage('https://i.pravatar.cc/100?u=$name'),
+                    backgroundImage: NetworkImage(content.userImageUrl),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: Text(
-                      name,
+                      content.user,
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
@@ -48,41 +49,51 @@ class UserPost extends StatelessWidget {
         SizedBox(
           height: 300,
           child: Image.network(
-            'https://picsum.photos/600/300?random=$name',
+            content.largeImageUrl,
             fit: BoxFit.cover,
+            loadingBuilder: (contex, child, loadingProgress) {
+              if (loadingProgress == null) return child;
+              return const Center(child: CircularProgressIndicator.adaptive());
+            },
           ),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
           child: Row(
-            children: const [
-              Icon(Icons.favorite_border),
-              SizedBox(
-                width: 10,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: const [
+                  Icon(Icons.favorite_border),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Icon(Icons.chat_bubble_outline_outlined),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Icon(Icons.send_outlined),
+                ],
               ),
-              Icon(Icons.chat_bubble_outline_outlined),
-              SizedBox(
-                width: 10,
-              ),
-              Icon(Icons.send_outlined),
+              const Icon(Icons.bookmark_border),
             ],
           ),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
           child: Row(
-            children: const [
-              Text('Liked by '),
+            children: [
+              // Text('Liked by '),
+              // Text(
+              //   'rozay ',
+              //   style: TextStyle(
+              //     fontWeight: FontWeight.bold,
+              //   ),
+              // ),
+              // Text(' and '),
               Text(
-                'rozay ',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              Text(' and '),
-              Text(
-                'others ',
-                style: TextStyle(
+                '${content.likes} likes',
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -92,18 +103,16 @@ class UserPost extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: RichText(
-            text: const TextSpan(
-              style: TextStyle(color: Colors.black),
+            text: TextSpan(
+              style: const TextStyle(color: Colors.black),
               children: [
                 TextSpan(
-                  text: 'kepala_sekolah ',
-                  style: TextStyle(
+                  text: '${content.user} ',
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                TextSpan(
-                    text:
-                        'Ayo anak anak masuk kelas, sudah waktunya belajar..'),
+                TextSpan(text: content.tags),
               ],
             ),
           ),
