@@ -83,6 +83,7 @@ class UserPost extends StatelessWidget {
               Text(
                 '${content.likes} likes ',
                 style: const TextStyle(
+                  // color: Theme.of(context).colorScheme.primary,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -93,7 +94,7 @@ class UserPost extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: RichText(
             text: TextSpan(
-              style: const TextStyle(color: Colors.black),
+              // style: const TextStyle(color: Colors.black),
               children: [
                 TextSpan(
                   text: '${content.user} ',
@@ -110,9 +111,9 @@ class UserPost extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
           child: Text(
             'View all comments',
-            style: TextStyle(
-              color: Colors.black54,
-            ),
+            // style: TextStyle(
+            //   color: Colors.black54,
+            // ),
           ),
         ),
         const Padding(
@@ -120,7 +121,7 @@ class UserPost extends StatelessWidget {
           child: Text(
             '17 hours ago',
             style: TextStyle(
-              color: Colors.black54,
+              // color: Colors.black54,
               fontSize: 10,
             ),
           ),
