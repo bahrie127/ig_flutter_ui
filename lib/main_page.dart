@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ig_flutter_ui/pages/home_page.dart';
+import 'package:ig_flutter_ui/pages/reels_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -27,14 +28,15 @@ class _MainPageState extends State<MainPage> {
         ),
       ),
     ),
-    const Center(
-      child: Text(
-        'Reels',
-        style: TextStyle(
-          fontSize: 40,
-        ),
-      ),
-    ),
+    // const Center(
+    //   child: Text(
+    //     'Reels',
+    //     style: TextStyle(
+    //       fontSize: 40,
+    //     ),
+    //   ),
+    // ),
+    ReelsPage(),
     const Center(
       child: Text(
         'Shop',
@@ -62,7 +64,7 @@ class _MainPageState extends State<MainPage> {
         showSelectedLabels: false,
         showUnselectedLabels: false,
         iconSize: 35,
-        selectedItemColor: Colors.black,
+        selectedItemColor: Colors.grey,
         currentIndex: _selectedIndex,
         onTap: _onTap,
         items: [
