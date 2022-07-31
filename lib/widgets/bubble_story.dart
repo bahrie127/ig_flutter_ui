@@ -44,6 +44,7 @@ class BubbleStory extends StatelessWidget {
                     child: Icon(
                       Icons.add,
                       size: 20,
+                      color: Colors.white,
                     ),
                   ),
                 ),
