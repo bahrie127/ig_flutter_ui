@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:ig_flutter_ui/models/content_model.dart';
 import 'package:ig_flutter_ui/widgets/bubble_story.dart';
 import 'package:ig_flutter_ui/widgets/user_post.dart';
@@ -52,33 +54,37 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Instagram',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 24,
-          ),
+        title: SvgPicture.asset(
+          'assets/icons/ic_logo.svg',
+          color: Colors.white,
         ),
+        // Text(
+        //   'Instagram',
+        //   style: TextStyle(
+        //     fontWeight: FontWeight.bold,
+        //     fontSize: 24,
+        //   ),
+        // ),
         centerTitle: false,
         backgroundColor: Colors.transparent,
         elevation: 0,
-        actions: const [
-          Icon(
-            Icons.add_box_outlined,
-            size: 30,
+        actions: [
+          SvgPicture.asset(
+            'assets/icons/ic_add.svg',
+            color: Colors.white,
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
-            child: Icon(
-              Icons.favorite_border,
-              size: 30,
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: SvgPicture.asset(
+              'assets/icons/ic_favorite.svg',
+              color: Colors.white,
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(right: 16),
-            child: Icon(
-              Icons.send_outlined,
-              size: 30,
+            padding: const EdgeInsets.only(right: 16),
+            child: SvgPicture.asset(
+              'assets/icons/ic_send.svg',
+              color: Colors.white,
             ),
           ),
         ],

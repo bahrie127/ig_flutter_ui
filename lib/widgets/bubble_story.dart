@@ -44,6 +44,7 @@ class BubbleStory extends StatelessWidget {
                     child: Icon(
                       Icons.add,
                       size: 20,
+                      color: Colors.white,
                     ),
                   ),
                 ),
@@ -58,13 +59,14 @@ class BubbleStory extends StatelessWidget {
                     ),
                     borderRadius: BorderRadius.circular(4),
                   ),
-                  child: const Text(
-                    'LIVE',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 10,
-                      fontWeight: FontWeight.bold,
+                  child: const Center(
+                    child: Text(
+                      'LIVE',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 10,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),

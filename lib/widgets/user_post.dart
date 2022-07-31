@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../models/content_model.dart';
 
@@ -60,16 +61,25 @@ class UserPost extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
-                children: const [
-                  Icon(Icons.favorite_border),
-                  SizedBox(
-                    width: 10,
+                children: [
+                  SvgPicture.asset(
+                    'assets/icons/ic_favorite.svg',
+                    color: Colors.white,
                   ),
-                  Icon(Icons.chat_bubble_outline_outlined),
-                  SizedBox(
-                    width: 10,
+                  const SizedBox(
+                    width: 14,
                   ),
-                  Icon(Icons.send_outlined),
+                  SvgPicture.asset(
+                    'assets/icons/ic_comment.svg',
+                    color: Colors.white,
+                  ),
+                  const SizedBox(
+                    width: 14,
+                  ),
+                  SvgPicture.asset(
+                    'assets/icons/ic_send.svg',
+                    color: Colors.white,
+                  ),
                 ],
               ),
               const Icon(Icons.bookmark_border)
@@ -93,7 +103,7 @@ class UserPost extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: RichText(
             text: TextSpan(
-              style: const TextStyle(color: Colors.black),
+              // style: const TextStyle(color: Colors.black),
               children: [
                 TextSpan(
                   text: '${content.user} ',
@@ -111,8 +121,8 @@ class UserPost extends StatelessWidget {
           child: Text(
             'View all comments',
             style: TextStyle(
-              color: Colors.black54,
-            ),
+                // color: Colors.black54,
+                ),
           ),
         ),
         const Padding(
@@ -120,7 +130,7 @@ class UserPost extends StatelessWidget {
           child: Text(
             '17 hours ago',
             style: TextStyle(
-              color: Colors.black54,
+              // color: Colors.black54,
               fontSize: 10,
             ),
           ),
