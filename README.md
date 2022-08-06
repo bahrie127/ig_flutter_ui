@@ -4,7 +4,9 @@ Layouting the UI for Instagram and creating the Rest API
 
 ## Youtube Link
 
-[![Watch the video](https://img.youtube.com/vi/Gz_VvDrTnfw/default.jpg)](https://youtu.be/Gz_VvDrTnfw)
+[![Watch the video](https://img.youtube.com/vi/Gz_VvDrTnfw/sddefault.jpg)](https://youtu.be/Gz_VvDrTnfw)
+
+https://youtu.be/Gz_VvDrTnfw
 
 ## API
 
