@@ -1,16 +1,21 @@
-# ig_flutter_ui
+# Flutter Instagram UI with Rest API
 
-A new Flutter project.
+Layouting the UI for Instagram and creating the Rest API
 
-## Getting Started
+## Youtube Link
 
-This project is a starting point for a Flutter application.
+[![Watch the video](https://img.youtube.com/vi/Gz_VvDrTnfw/default.jpg)](https://youtu.be/Gz_VvDrTnfw)
 
-A few resources to get you started if this is your first Flutter project:
+## API
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- GET with pixabay.com
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## ScreenShot
+
+| Home         | Home           |
+|--------------|----------------|
+| <img src="img1.png" width="300"/> | <img src="img2.png" width="300"/>      |
+
+
+
