@@ -22,7 +22,8 @@ class _HomePageState extends State<HomePage> {
     'Budi',
     'Rojanah',
     'Bahri',
-    'Erwin'
+    'Erwin',
+    'Rocky'
   ];
 
   final String dataUrl =
@@ -82,37 +83,68 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          SizedBox(
-            height: 120,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                return BubbleStory(
-                  name: users[index],
-                  isMe: index == 0 ? true : false,
-                  isLive: index == 1 ? true : false,
-                );
-              },
-              itemCount: users.length,
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 120,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return BubbleStory(
+                    name: users[index],
+                    isMe: index == 0 ? true : false,
+                    isLive: index == 1 ? true : false,
+                  );
+                },
+                itemCount: users.length,
+              ),
             ),
           ),
-          const Divider(
-            height: 1,
-          ),
-          Expanded(
-            child: ListView.builder(
-              itemBuilder: (context, index) {
-                return UserPost(
-                  content: listContent[index],
-                );
-              },
-              itemCount: listContent.length,
-            ),
-          ),
+          SliverList(
+              delegate: SliverChildBuilderDelegate(
+            (contex, index) {
+              return UserPost(
+                content: listContent[index],
+              );
+            },
+            childCount: listContent.length,
+          )),
         ],
       ),
+
+      
+      // Column(
+      //   children: [
+      //     SizedBox(
+      //       height: 120,
+      //       child: ListView.builder(
+      //         scrollDirection: Axis.horizontal,
+      //         itemBuilder: (context, index) {
+      //           return BubbleStory(
+      //             name: users[index],
+      //             isMe: index == 0 ? true : false,
+      //             isLive: index == 1 ? true : false,
+      //           );
+      //         },
+      //         itemCount: users.length,
+      //       ),
+      //     ),
+      //     const Divider(
+      //       height: 1,
+      //     ),
+      //     Expanded(
+      //       child: ListView.builder(
+      //         itemBuilder: (context, index) {
+      //           return UserPost(
+      //             content: listContent[index],
+      //           );
+      //         },
+      //         itemCount: listContent.length,
+      //       ),
+      //     ),
+      //   ],
+      // ),
     );
   }
 }
